@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffc0cb; /* Baby pink background */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6f61;
+        }
+        p {
+            color: #333;
+        }
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            align-items: center; /* Center the buttons horizontally */
+        }
+        button {
+            padding: 10px 20px;
+            width: 200px; /* Set a fixed width for all buttons */
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: left;
+        }
+        button:hover {
+            background-color: #e2594b;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Why moko blinock huhu 🥺?</h1>
+        <p>Please select an answer:</p>
+        <div class="choices">
+            <button onclick="showPage('three')">a. Wala lang</button>
+            <button onclick="showPage('four')">b. Bored nako sayo</button>
+            <button onclick="showPage('five')">c. Pikon ako sayo</button>
+            <button onclick="showPage('six')">d. 9</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(choice) {
+            switch (choice) {
+                case 'three':
+                    window.location.href = 'three.html'; // Go to page for choice 'a'
+                    break;
+                case 'four':
+                    window.location.href = 'four.html'; // Go to page for choice 'b'
+                    break;
+                case 'five':
+                    window.location.href = 'five.html'; // Go to page for choice 'c'
+                    break;
+                case 'six':
+                    window.location.href = 'six.html'; // Go to page for choice 'd'
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

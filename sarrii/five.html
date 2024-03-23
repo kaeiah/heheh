@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry na 🥺?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffc0cb; /* Baby pink background */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6f61;
+        }
+        p {
+            color: #333;
+        }
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Adjust the gap between buttons */
+            justify-content: center; /* Center the buttons horizontally */
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            width: 200px; /* Set a fixed width for all buttons */
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e2594b;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Sorry na 🥺?</h1>
+        <p>Please select an option:</p>
+        <div class="choices" id="choices">
+            <button onclick="changeOption('first')">Sige na nga</button>
+            <button id="secondOption" onclick="changeOption('second')">Balakajan ayaw ko</button>
+        </div>
+    </div>
+
+    <script>
+        function changeOption(option) {
+            if (option === 'first') {
+                const firstButton = document.querySelector("#choices button:nth-of-type(1)");
+                const buttonText = firstButton.innerText;
+                if (buttonText === 'Sige na nga') {
+                    firstButton.innerText = 'Totoo🥺?';
+                } else if (buttonText === 'Totoo🥺?') {
+                    firstButton.innerText = 'Yeyyy unblock mo na ako XD';
+                }
+            } else if (option === 'second') {
+                const secondButton = document.getElementById('secondOption');
+                const xPosition = Math.random() * window.innerWidth;
+                const yPosition = Math.random() * window.innerHeight;
+                secondButton.style.position = "absolute";
+                secondButton.style.left = xPosition + "px";
+                secondButton.style.top = yPosition + "px";
+                document.body.appendChild(secondButton);
+            }
+        }
+    </script>
+</body>
+</html>

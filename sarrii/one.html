@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffc0cb; /* Baby pink background */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6f61;
+        }
+        p {
+            color: #333;
+        }
+        .emoji {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        input[type="range"] {
+            width: 50%;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #e2594b;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Survey lang po!</h1>
+        <p>On a scale of meow to 10, how much did you enjoy talking to me?</p>
+        <input type="range" min="1" max="10" value="5" id="scale">
+        <div class="emoji" id="emoji">😐</div>
+        
+        <button onclick="submitForm()">submit?</button>
+    </div>
+
+    <script>
+        const scaleInput = document.getElementById('scale');
+        const emojiOutput = document.getElementById('emoji');
+
+        scaleInput.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            let emoji;
+            switch(value) {
+                case 1:
+                    emoji = '😞';
+                    break;
+                case 2:
+                    emoji = '😔';
+                    break;
+                case 3:
+                    emoji = '😖';
+                    break;
+                case 4:
+                    emoji = '😣';
+                    break;
+                case 5:
+                    emoji = '😢';
+                    break;
+                case 6:
+                    emoji = '🥺';
+                    break;
+                case 7:
+                    emoji = '😶';
+                    break;
+                case 8:
+                    emoji = '😐';
+                    break;
+                case 9:
+                    emoji = '😄';
+                    break;
+                case 10:
+                    emoji = '😆';
+                    break;
+                default:
+                    emoji = '😐';
+                    break;
+            }
+            emojiOutput.innerText = emoji;
+        });
+
+        function submitForm() {
+            window.location.href = 'two.html';
+        }
+    </script>
+</body>
